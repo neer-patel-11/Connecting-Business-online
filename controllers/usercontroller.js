@@ -49,7 +49,6 @@ const loadRegister = async (req, res) => {
 // sending mail using nodemailer
 const sendMail = async (req, res, name, companyemail, user_id) => {
 
-
   var hostname = req.headers.host; // hostname = 'localhost:8080'
   var pathname = url.parse(req.url).pathname; // pathname = '/MyApp'
   console.log('http://' + hostname + pathname);
@@ -293,21 +292,20 @@ const insertUser = async (req, res) => {
         pincode: data.pincode,
         state: data.city_state,
         friends: defaultFriend,
-        isVerified: false,
+        isVerified: true,
 
       });
       const userData = await UserModel.save();
       if (userData) {
-
-        sendMail(req, res, req.body.companyname, req.body.companyemail, userData._id);
-        res.render('registration', { message: "your registration has been successfully completed , please verify your mail", req: req })
+      
+        // sendMail(req, res, req.body.companyname, req.body.companyemail, userData._id);
+        res.render('registration', { message: "your registration has been successfully completed ", req: req })
       }
       else {
         res.render('registration', { message: "your registration has been failed", req: req })
       }
     } catch (error) {
-      console.log("hecjdncks")
-      console.log(error.message);
+     
       res.redirect('/404')
 
     }
@@ -366,15 +364,7 @@ const verifyLogin = async (req, res) => {
   }
 }
 
-// function to load home.ejs
-// const loadHome = async(req,res)=>{
-//     try {
-//         res.render('home');
-//     } catch (error) {
-//         console.log(error.message);
-//     }
-// }
-// ===========================
+
 
 //  ********* LOGOUT **************
 const userLogout = async (req, res) => {
