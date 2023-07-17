@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="description" content="Buy and Sell Products Online with Businera – Your Trusted Business Platform">
+<meta name="keywords" content="B2B business websites ,Online business platform, buy and sell products, business bridge, connect businesses online, online marketplace, business networking, B2B marketplace, digital commerce">
+<meta name="language" content="English">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="author" content="Businera">
+   <meta name="robots" content="index, follow">
+ <meta property="og:description" content="Connect businesses online for buying and selling products. Join Businera today!">
+
+  
+  <title>Businera</title>
+  <link rel="icon"  href="images/logotitle.png" type="image/png">
+
+   <link rel="shortcut icon"  href="images/logotitle.png" type="image/png">
+
+  <!-- slider stylesheet -->
+  <!-- <link rel="stylesheet" type="text/css"href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" /> -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet"  href="/css/bootstrap.css" />
+  <link rel="stylesheet"  href="/css/slider.css" />
+
+  <link rel="stylesheet"  href="/css/footer.css" />
+  
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Dosis:400,500|Poppins:400,700&amp;display=swap"
+    rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="/css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="/css/responsive.css" rel="stylesheet" />
+  <script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script>
+
+  <style>
+.containerSwitch {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.containerSwitch .columSwitchn {
+  width: 25%;
+  height: 100%;
+  float: left;
+  border-right: 2px solid rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  z-index: 1;
+}
+.containerSwitch .columSwitchn:last-child {
+  border-right: none;
+}
+.containerSwitch .columSwitchn .contentSwitch {
+  position: relative;
+  height: 100%;
+}
+.containerSwitch .columSwitchn .contentSwitch h1 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 15em;
+  border-top: 2px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+.containerSwitch .columSwitchn .contentSwitch .box {
+  position: absolute;
+  top: 50%;
+  transform: translateY(100%);
+  box-sizing: border-box;
+  padding: 40px;
+  background: rgba(255, 255, 255, 1);
+  text-align: center;
+  transition: 0.5s;
+  opacity: 0;
+}
+.containerSwitch .columSwitchn.active .contentSwitch .box {
+  opacity: 1;
+  transform: translateY(-50%);
+}
+.containerSwitch .columSwitchn .contentSwitch .box h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 30px;
+  color: #262626;
+}
+.containerSwitch .columSwitchn .contentSwitch .box p {
+  color: #262626;
+  font-size: 18px;
+}
+.containerSwitch .columSwitchn .bgSwitch {
+  position: absolute;
+  top: 45rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+.containerSwitch .columSwitchn.active .bgSwitch.bgSwitch1 {
+  background: url(./images/switch1.jpg)
+    no-repeat center center fixed;
+  background-size: cover;
+  transition: 0.5s;
+}
+.containerSwitch .columSwitchn.active .bgSwitch.bgSwitch2 {
+  background: url(./images/switch2.jpeg)
+    no-repeat center center fixed;
+  background-size: cover;
+  transition: 0.5s;
+}
+.containerSwitch .columSwitchn.active .bgSwitch.bgSwitch3 {
+  background: url(./images/switch3.jfif)
+    no-repeat center center fixed;
+  background-size: cover;
+  transition: 0.5s;
+}
+.containerSwitch .columSwitchn.active .bgSwitch.bgSwitch4 {
+  background: url(./images/switch4.jpg)
+    no-repeat center center fixed;
+  background-size: cover;
+  transition: 0.5s;
+}
+
+    #earth {
+
+  width: 100%;
+  height: 100%;
+  touch-action: manipulation;
+  margin-left: -63%;width: 1536px;height: 714px; margin-top: -13%;
+}
+
+  
+@media screen and (max-width: 1024px) {
+  .box_card1{
+    top:-102px;
+    left:-359px;
+  }
+  ..box_card2{
+    top:-102px;
+    left:-359px;
+  }
+  .box_card3{
+    top:-102px;
+    left:-359px;
+  }
+  .box_card4{
+    top:-102px;
+    left:-359px;
+  }
+  .box_card{
+    top:-102px;
+    left:-359px;
+  }
+  #earth{
+    display: none;
+  }
+}
+
+    
+/* Responsive img */
+.responsive {
+  width: 100%;
+  height: auto;
+}
+
+/* Responsive background */
+.responsive-bg {
+  background: url('https://businera-shop-responsive.neerpatel8.repl.co/images/coursal_1.jpg');
+  background-size: cover;
+  height: 0;
+  padding-bottom: 66.66%; /* = image.height / image.width * 100% */
+}
+
+.responsive-bg-w-text {
+  display: flex;
+  background: url('https://businera-shop-responsive.neerpatel8.repl.co/images/coursal_1.jpg');
+  background-size: cover;
+  height: 0;
+  padding-bottom: 66.66%; /* = image.height / image.width * 100% */
+  
+  align-items: center;
+  justify-content: center;
+}
+
+.responsive-bg-w-text>.header {
+  display: inline;
+
+  margin-top: 66.66%; /* the same as side ratio above */
+  
+  font-size: calc(1em + 7vw);
+  font-family: 'Abril Fatface', cursive;
+  text-shadow: 0 0 .5em #F9A825;
+}
+  
+  </style>
+  
+</head>
+
+<body>
+
+
+ 
+  <div class="hero_area">
+    <!-- header section strats -->
+    <%- include("layoouts/header") %>
+
+  <div class="responsive-bg-w-text">
+  <div class="header">BUY SELL ONLINE</div>
+</div>
+
+  </div>
+
+  <!-- welcome section -->
+  <section class="welcome_section layout_padding">
+    <div class="container">
+      <div class="custom_heading-container">
+        <h2>
+          Welcome To Businera
+        </h2>
+      </div>
+      <div class="layout_padding2">
+        <div class="img-box">
+          <img src="images/welcome.png" alt="" />
+        </div>
+        <div class="detail-box" style;">
+          <h3>Businera is open online marketplace for companies to sell there product around the
+            globe. We also help buyer to find there desirable product with best suitable price . We connect businesses
+            from the world.
+          </h3>
+          <div>
+            <a href="/about">
+              Read More
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- end welcome section -->
+
+  <!-- service section -->
+  <section class="service_section">
+    <div class="container">
+      <div class="custom_heading-container">
+        <h2 style="margin-top:4rem;">
+          Services we provide
+        </h2>
+      </div>
+      <div class="service_container layout_padding2">
+        <div class="service_box">
+          <div class="img-box">
+            <img src="/images/electronic.jpg" alt="" />
+          </div>
+          <div class="detail-box">
+            <h4>
+              Electronics
+
+            </h4>
+            <p>
+              Our Lives are surrounded by electronics gadgets
+              , Register your electronics company and sell your
+              semiconductor chip to the world.
+            </p>
+          </div>
+        </div>
+        <div class="service_box">
+          <div class="img-box">
+            <img src="/images/grain.png" alt="" />
+          </div>
+          <div class="detail-box">
+            <h4>
+              Grains
+            </h4>
+            <p>
+              There are some countries where people dont have access to quality grains , You may be the one to satisfy
+              there need.
+            </p>
+          </div>
+        </div>
+        <div class="service_box">
+          <div class="img-box">
+            <img src="images/steel.jpg" alt="" />
+          </div>
+
+          <div class="detail-box">
+            <h4>
+              Raw Metal products
+            </h4>
+            <p>
+              Our home , hospital, school, office, bridge are made using reliable Metal , Be the one to have lots of
+              wishes .
+            </p>
+          </div>
+        </div>
+
+        <div class="service_box">
+          <div class="img-box">
+            <img src="images/chemical.jpg" alt="" />
+          </div>
+
+          <div class="detail-box">
+            <h4>
+              Chemical
+            </h4>
+            <p>
+              Some Chemical make people cure tough diseases , Some help us to make our fram more fertile , Register your
+              chemical factory as soon as posible.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div>
+
+
+        <a href="/service">
+          Read More
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- end service section -->
+  <!--problem section -->
+  <section class="problem_section layout_padding">
+    <div class="container">
+      <div class="custom_heading-container">
+        <h2>
+          Make your Connection Overseas with our website.
+        </h2>
+      </div>
+      <div class="layout_padding2">
+        <div class="img-box">
+          <img src="images/problem.jpg" alt="" />
+        </div>
+        <div class="detail-box">
+          <h2>
+            Connect to as many sellers as you want worldwide .<br>
+
+          </h2>
+          <div>
+            <a href="/getProduct">
+              Read More
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- end problem section -->
+  <!-- why section -->
+
+  <section class="why_section layout_padding">
+    <div class="container">
+      <div class="custom_heading-container">
+        <h2>
+          Why Choose Us
+        </h2>
+      </div>
+      <div class="content-container">
+
+        <div class="row">
+          <div class="col-md-3 col-sm-6">
+            <div class="img-box">
+              <img src="images/smiley.png" alt="" />
+            </div>
+            <div class="detail-box">
+              <h3>
+                <!-- 99% -->
+              </h3>
+              <h6>
+                SATISFIED CLIENTS
+              </h6>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="img-box">
+              <img src="images/monitor.png" alt="" />
+            </div>
+            <div class="detail-box">
+              <h3>
+                <!-- 4700+ -->
+              </h3>
+              <h6>
+                AWESOME planing
+              </h6>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="img-box">
+              <img src="images/multiple-users-silhouette.png" alt="" />
+            </div>
+            <div class="detail-box">
+              <h3>
+                <!-- 4500+ -->
+              </h3>
+              <h6>
+                Connecting CLIENTS
+              </h6>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="img-box">
+              <img src="images/bar-chart.png" alt="" />
+            </div>
+            <div class="detail-box">
+              <h3>
+                <!-- 19000+ -->
+              </h3>
+              <h6>
+                DAILY business
+              </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- end why section -->
+
+  <!-- Footer -->
+
+<%- include("layoouts/footer") %>
+  <!-- end client section -->
+  <!-- contact section -->
+
+
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js">    </script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+
+   <script>
+    $(document).on("mouseover", ".containerSwitch .columSwitchn", function () {
+  $(this).addClass("active").siblings().removeClass("active");
+});
+
+</script>
+
+  
+	<script type="text/javascript" src="js/three.js"></script>
+
+  <script>
+
+//(function(){
+	var AMOUNT=200, d=25, R=200, adjustment=true, adaptive=true,
+		obliquity=23/180*3.14, roV1=.0022, roV2=-.0005, ro1=0, ro2=0,
+		canvas='#earth', color='#6f42c1', fogC='#6f42c1', T_earth='https://mapplix.github.io/earth/earth.png  ';
+
+	var camera, scene, renderer;
+
+	var positions=[], particles, particle, count = 0, dpr, lastW,
+	W=window.innerWidth, H=window.innerHeight, aspect=W / H, vMin=Math.min(W,H);
+
+	var mouseX = 0, mouseY = 0, x0, y0;
+	var lookAt=new THREE.Vector3(0, 0, 0), canvas=document.querySelector(canvas); 
+
+	renderer = new THREE.WebGLRenderer({alpha:true, antialias:true, canvas: canvas});//
+	renderer.setSize( W, H );
+	//renderer.context.getExtension('OES_standard_derivatives');
+	camera = new THREE.PerspectiveCamera( 18, aspect, 1, 10000 );
+	scene = new THREE.Scene();
+	var Emap = (new THREE.TextureLoader()).load( T_earth );
+	Emap.anisotropy=Math.min(8, renderer.capabilities.getMaxAnisotropy())||1;
+	var Wmaterial = new THREE.MeshStandardMaterial({
+		onBeforeCompile: function(sh){
+			sh.vertexShader='\
+#define MYSHADER\n\
+attribute float center, bright;\n\
+varying vec3 vCenter, vPos, vV0, vV1, vV2;\n\
+varying float vBright;\n\
+'			+sh.vertexShader.replace(/}\s*$/, '\
+	vBright=bright;\n\
+	int c=int(center);\n\
+	vCenter = vec3(c==0, c==1, c==2);\n\
+	vPos=position;\n\
+	gl_Position = projectionMatrix * modelViewMatrix * vec4(vPos, 1);\n\
+	vV0=vCenter[0]*vPos;\n\
+	vV1=vCenter[1]*vPos;\n\
+	vV2=vCenter[2]*vPos;\n\
+}\			');
+			sh.fragmentShader='\
+#define MYSHADER\n\
+varying vec3 vCenter, vPos, vV0, vV1, vV2;\n\
+varying float vBright;\n\
+'			+sh.fragmentShader.replace('#include <alphamap_fragment>', '\
+	#include <alphamap_fragment>\n\
+	vec3 d = fwidth( vCenter );\n\
+	vec3 a3 = smoothstep( vec3(0.0), d * 1.4, vCenter+0.4*d-1.0/fogDepth );\n\
+	float scale = dot(normalize(vViewPosition), vNormal);\n\
+	scale = 1.0-scale*scale;\n\
+	float dist = distance(vPos, vV0.xyz/vCenter.x);\n\
+	dist = min(dist, distance(vPos, vV1.xyz/vCenter.y));\n\
+	dist = min(dist, distance(vPos, vV2.xyz/vCenter.z));\n\
+	float b3 = smoothstep(1.5, 1.8, dist-1.5*scale*scale );\n\
+	float edgeFactorTri=min(b3,min( min( a3.x, a3.y ), a3.z ));\n\
+	diffuseColor.a *= mix( 1.0,  0.0, edgeFactorTri );\n\
+	float dissipation='+(posZ+.5*R+.01)+';\n\
+	diffuseColor.a *= smoothstep( 20.0,  0.0, fogDepth-dissipation );\n\
+\			').replace('	#include <fog_fragment>', '\
+	float lVc=length(vCenter);\n\
+	gl_FragColor.rgb *= smoothstep( '+R*.8888+', '+R*1.201+', fogDepth );\n\
+	gl_FragColor.rgb = mix( gl_FragColor.rgb, vec3(3), (.1*lVc+pow(lVc,8.0))*vBright );\n\
+	#include <fog_fragment>\
+\			');
+			//console.log(sh, sh.vertexShader, sh.fragmentShader);
+		},
+		roughness: .5,
+		metalness: .964,
+		envMapIntensity:5,
+		emissive: 0,
+		// refractionRatio: -0.12,
+		transparent: true, alphaTest: 0.05
+	});//, opacity: 0
+	Wmaterial.color.set(fogC);
+	Wmaterial.side=2;
+	Wmaterial.extensions={derivatives: 1};
+	var geometry = new THREE.IcosahedronGeometry(R,3);//OctahedronGeometry
+
+	for ( var i = 0; i < geometry.vertices.length; i ++ ) {
+		geometry.vertices[i].applyEuler(new THREE.Euler(Math.random()*.06,Math.random()*.06,Math.random()*.06))
+	}
+	var bGeometry=(new THREE.BufferGeometry).fromGeometry(geometry);
+	var position = bGeometry.attributes.position;
+	var centers = new Int8Array( position.count );
+	var brights = new Float32Array ( position.count );
+	var points=[], activePoints=[], vCount=geometry.vertices.length, dCount=0, dMid=0;
+
+	for ( var i = 0, l = position.count; i < l; i ++ ) {
+		var c =centers[i]= i % 3, j=(i-c)/3;
+		brights[i]=0;
+		if (i<vCount) points[i]={siblings:[], distances:[], indexes:[], brightness:0, v:0, a:0, f:0, dr:0, r:1};
+	}
+	function addSiblings(a,b,one){
+		if (points[a].siblings.indexOf(points[b])<0) {
+			points[a].pos=geometry.vertices[a].clone();
+			points[a].siblings.push(points[b]);
+			var d=geometry.vertices[a].distanceTo(geometry.vertices[b]);
+			points[a].distances.push(d);
+			dMid+=d; dCount++;
+		}
+		if (!one) addSiblings(b,a,1)
+	}
+	geometry.faces.forEach(function(face, i){
+		addSiblings(face.a,face.b);
+		addSiblings(face.a,face.c);
+		addSiblings(face.c,face.b);
+		points[face.a].indexes.push(i*3);
+		points[face.b].indexes.push(i*3+1);
+		points[face.c].indexes.push(i*3+2);
+	});
+	dMid/=dCount;
+	var ttl=10;
+	(function setActive(n){
+		if (!n) return
+		var i=parseInt(Math.random()*vCount)
+		if (geometry.vertices[i].z<-100) setActive()
+		else points[i].isActive=ttl, activePoints.push(points[i]);
+		setActive(n-1) 
+	})(10);
+	
+	bGeometry.addAttribute( 'center', new THREE.BufferAttribute( centers, 1 ) );
+	bGeometry.addAttribute( 'bright', new THREE.BufferAttribute( brights, 1 ) );
+
+	var Ematerial = Wmaterial.clone();
+	Ematerial.alphaMap=Emap; Ematerial.transparent=false; Ematerial.side=0;
+	var cubeCamera = new THREE.CubeCamera( 1, 2*R, 256 );
+	cubeCamera.position.z=.47*R
+	Ematerial.envMap=cubeCamera.renderTarget.texture;
+	Ematerial.envMap.minFilter = THREE.LinearMipMapLinearFilter; 
+	Ematerial.envMap.mapping=THREE.CubeReflectionMapping;
+	var Earth = new THREE.Mesh(new THREE.IcosahedronGeometry(R*.77, 3), Ematerial)
+	var wGeometry=geometry.clone();
+	particles = new THREE.Group();
+	world = new THREE.Group();
+	var Net=new THREE.Mesh(bGeometry, Wmaterial);
+	particles.add(Net, Earth);//new THREE.Points(geometry, Pmaterial), 
+	//particles.rotation.order='YXZ'
+	world.add(particles);
+	scene.add(world);
+	// POSITIONS :
+	var posZ = 1700; //distance to camera
+	//scene.position.set(-12,54,0);
+
+	//camera.position.y=camera.position.z=2000
+
+	scene.fog=new THREE.Fog(fogC, posZ-R/2, posZ+R);
+	hLight=new THREE.HemisphereLight('#fff', 0, 23)
+	world.add(hLight);
+	hLight.position.set(0,0,1)
+
+// interactions
+	var dx, dy=dx=x0=y0=0, active, abc=['a', 'b', 'c'], movedPoints=[], activeF=[], ready,
+		raycaster=new THREE.Raycaster(),
+		mouse = new THREE.Vector2();
+	window.getWpos=function(){
+		return [scene.position, scene.rotation, camera]
+	}
+	function interact() {
+		mouse.x = ( x0 / W ) * 2 - 1;
+		mouse.y = - ( y0 / H ) * 2 + 1;
+		raycaster.setFromCamera( mouse, camera );
+		movedPoints.forEach(function(point, i){point.f=0});
+		activeF=[];
+		if (!active) return;
+		var inters=raycaster.intersectObject(Net)[0], ind, vert;
+		if (!inters) return;
+		point=Net.worldToLocal(inters.point.clone());
+		for (var i = 0; i < 3; i++) {
+			ind=inters.face[abc[i]];
+			if ( !points.some(function(p, i){return p.indexes.indexOf(ind)>=0 && (vert=i+'') }) ) return;
+			activeF[vert]=Math.max(1-point.distanceTo(points[vert].pos)/dMid, 0)*100
+		}
+		// console.log(activeF, points[vert]);
+	}
+	canvas.onpointerdown=canvas.onmousedown=canvas.ontouchstart=function(e){
+		active=e.changedTouches?e.changedTouches[0]:e;
+		x0=active.clientX;
+		y0=active.clientY;
+		e.preventDefault();
+		interact();
+	};
+	onpointermove=onmousemove=ontouchmove=function(e){
+		if (!active || !ready) return
+		var touches=e.changedTouches;
+		if (active.identifier!==undefined && e.type!='touchmove') return;
+		if (touches) {
+			if (touches[0].identifier==active.identifier) e=touches[0]
+			else return
+		}
+		else {e.preventDefault()};
+		//if (e.type==mousemove && !e.which) return
+		dx=(5*dx+x0-(x0=e.clientX))/6;
+		dy=(5*dy+y0-(y0=e.clientY))/6;
+		//console.log(e.type, active.identifier, dx, x0)
+		interact();
+		ready=0;
+	};
+	onmouseup=onpointerup=ontouchup=ontouchcancel=onpointercancel=function(e){
+		active=false;
+		//console.log()
+		interact();
+	}
+
+	var t0=new Date()*1, dMax=80, dMin=1000/33, dT=1000/50, af, Pactive=[], m=3000000, k=400, k0=1, f0=.01, fv=1000,
+		posArr=bGeometry.attributes.position.array,
+		pUp=0, pDn=[], flTimer=[], vecTest=new THREE.Vector3(), transStart, pLast, transactions=[];
+	requestAnimationFrame(function animate() {
+		requestAnimationFrame( animate );
+		var t=new Date()*1, dt=t-t0;
+		if (dt<dMin) return; // !Eh || 
+		dt=Math.min(dt, dMax);
+		t0=t;
+		var dd=dt/dT;
+		var pos=canvas.getBoundingClientRect(), dY=window.innerHeight-document.documentElement.getBoundingClientRect().bottom;
+		if (pos.bottom<=0 || pos.top>=window.innerHeight) return;
+		if (dpr!=(dpr=window.devicePixelRatio) || W!=(W=window.innerWidth) || H!=(H=window.innerHeight)) {
+			vMin=Math.min(W,H);
+			renderer.setSize(W, H);
+			renderer.setPixelRatio( dpr );
+			camera.aspect=W/H;
+			camera.updateProjectionMatrix();
+		}
+		var addPoints=[];
+		activePoints.forEach(function(point, i){
+			var b=point.brightness;
+			if (point.isActive && (b+=(point.speed||.3)*(b+.05)*dd) >1) {//
+				point.siblings.forEach(function(s, j){
+					if ( activePoints.indexOf(s)>-1) return //console.log(11);
+					s.speed=3.7/point.distances[j];
+					//s.from=point;
+					if (s.isActive=(Math.random()>.6)) activePoints.push(s);
+				})
+				point.isActive=0;
+			} else if (!point.isActive && (b-=b*.056*dd) < 0.005) {
+				b=0;//point.from=
+				activePoints.splice(i,1)
+			}
+			point.brightness=b;
+			point.indexes.forEach(function(i){
+				brights[i]=b;
+			});
+		});
+		points.forEach(function(point, i){
+			var d=0;
+			point.siblings.forEach(function(s,j){d+=s.dr;});
+			d=d/point.siblings.length-point.dr;
+			point.f=-(activeF[i]||0)*.4+d*k-point.dr*k0*(1+Math.abs(1-point.r))-point.v*fv;
+			point.v+=point.f*dt/m;
+			point.r=1+point.dr;
+			point.indexes.forEach(function(j){
+				//brights[i]+=point.f; return;
+				posArr[j*=3]=point.r*point.pos.x;
+				posArr[j+1]=point.r*point.pos.y;
+				posArr[j+2]=point.r*point.pos.z;
+			});
+		});
+		points.forEach(function(point, i){
+			if (!point.v) return;
+			var dd=point.v*dt;
+			point.dr+=dd;
+		});
+		bGeometry.attributes.bright.needsUpdate=true;
+		bGeometry.attributes.position.needsUpdate=true;
+		camera.position.z += (posZ - camera.position.z ) * .085*dd;
+		ro1+=roV1*dd; ro2+=roV2*dd;
+		particles.rotation.set(0,0,0);
+		particles.rotateY(ro2).rotateX(obliquity).rotateY(ro1);
+		particles.rotation.y-=.0009
+
+		dx*=(1-.03*dd);
+		dy*=(1-.03*dd);
+		ro2-=dx*.002;//+(W/2-y0)*(W/2-x0)*dy/vMin*.00004;
+		world.rotation.x-=dy*.002;
+		var sro=world.rotation.x*=.92;
+		Net.applyMatrix(new THREE.Matrix4().getInverse(particles.matrixWorld).multiply(
+				new THREE.Matrix4().makeRotationFromEuler(new THREE.Euler(-dy*.003, -dx*.002,0))
+			).multiply(particles.matrixWorld)//new THREE.Matrix4()
+		);
+		Earth.visible=!1;
+		scene.scale.set(.33,.33, .65)//.applyEuler(new THREE.Euler(-sro,0,0))
+		cubeCamera.update( renderer, scene );
+		Earth.visible=!0;
+		scene.scale.set(1,1,1)
+		particles.matrixWorldNeedsUpdate=true;
+		renderer.render( scene, camera );
+		ready=1;
+	})
+//})()
+</script>
+
+  
+</body>
+
+</html>

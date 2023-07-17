@@ -1,0 +1,225 @@
+
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+<head>
+  
+    <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.111.3">
+  <title>Profile</title>
+  <link rel="icon"  href="images/logotitle.png" type="image/png">
+  
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sign-in/">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  
+
+<link href="styles.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+<link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
+<meta name="theme-color" content="#712cf9">    
+  <link href="css/styles.css" rel="stylesheet">
+  <script type="text/javascript" src="js/city_state.js"></script>
+
+  <link rel="stylesheet" type="text/css"href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+<!-- bootstrap core css -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="css/footer.css" />
+
+<!-- fonts style -->
+<link href="https://fonts.googleapis.com/css?family=Dosis:400,500|Poppins:400,700&amp;display=swap"
+  rel="stylesheet" />
+<!-- Custom styles for this template -->
+<link href="css/style.css" rel="stylesheet" />
+<!-- responsive style -->
+<link href="css/responsive.css" rel="stylesheet" />
+  <style>
+
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+      width: 30%;
+      border-radius: 5px;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+    
+    .container {
+      padding: 3px 24px;
+      font-size:15px;
+      font-family:Verdana;
+    }
+
+    body {
+      background: -webkit-gradient(linear, left top, right top, from(#864ddf), to(#203376));
+      background: linear-gradient(to right, #864ddf, #203376);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .main h2 {
+      color: #000;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      position: relative;
+      margin: 10px 15px 15px 10px;
+    
+     
+      font-size:14px;
+      color:white;
+      display: inline-block;
+                width: 64px;
+                height: 34px;
+                margin-bottom: 0;
+                
+                background: blue;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.12);
+    
+    }
+    .btn:hover {
+      color:black;
+                     background: yellow;
+
+       
+    }
+    body {
+      background: -webkit-gradient(linear, left top, right top, from(#864ddf), to(#203376));
+      background: linear-gradient(to right, #864ddf, #203376);
+    }
+
+    .divider:after,
+    .divider:before {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #383a90;
+    }
+
+    .h-custom {
+      height: calc(100% - 73px);
+    }
+
+   
+
+    @media (max-width: 450px) {
+      .h-custom {
+        height: 100%;
+      }
+    }
+
+   
+  </style>
+ 
+</head>
+
+  <body class="text-center">
+
+            <%- include("../layoouts/header") %>
+          <center>   <div class="card">
+    <div class="container">
+  <form action="/edit" method="POST"><br>
+    <i class="fa fa-pencil" style="font-size:20px">Edit</i>
+   
+    <br><br>
+
+              <!-- Email input -->
+              
+            
+             
+              <!-- companyname -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example3"><b>COMPANY NAME</b></label>
+                <input type="text" name="companyname" id="form3Example3" class="form-control form-control-lg" value="<%=user.companyName%>"
+                  placeholder="Enter a valid companyname" required />
+              </div>
+              <!-- contactnumber -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example3"><b>CONTACT NUMBER</b></label>
+                <input type="tel" name="contactnumber" id="form3Example3" class="form-control form-control-lg" value="<%=user.contactNumber%>"  placeholder="Enter a valid contactnumber" required />
+              </div>
+
+              <!-- address -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example3"><b>ADDRESS</b></label>  
+                <input type="text" name="address" class="form-control top" value="<%=user.address%>"  placeholder="address" required>
+              </div>
+
+               <div class="form-outline mb-4">
+               <b> Region&raquo; <select onchange="set_country(this,country,city_state)" size="1" name="region" value="<%=user.continent%>">
+                  <option value="" selected="selected"><b>SELECT REGION</b></option>
+                  
+                  <script type="text/javascript">
+                  setRegions(this);
+                  </script>
+                  </select> 
+               </div>
+              <div class="form-outline mb-4">
+                 Country&raquo; <select name="country" size="1" disabled onchange="set_city_state(this,city_state) " value="<%=user.country%>"><b>SELECT COUNTRY</b></select>
+                 
+              </div>
+                <div class="form-outline mb-4">
+                  City/State&raquo; <select name="city_state" size="1" disabled onchange="print_city_state(country,this)" value="<%=user.state%>"><b>SELECT CITY/STATE</b></select>
+                </div>
+              
+              <!-- pincode -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example3"><b>PINCODE</b></label>
+                <input type="text" name="pincode" id="form3Example3" class="form-control form-control-lg" value="<%=user.pincode%>"
+                  placeholder="Enter a valid pincode" required />
+              </div>
+              <!-- companyInfo -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example3"><b>COMPANY INFO</b></label>
+                <input type="text" name="companyInfo" id="form3Example3" class="form-control form-control-lg" value="<%=user.companyInfo%>"
+                  placeholder="Enter a valid companyInfo" required />
+              </div>
+              <!-- buisenessType -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example3"><b>BUSINESS TYPE</b></label>
+                <input type="text" name="buisenessType" id="form3Example3" class="form-control form-control-lg" value="<%=user.buisnessType%>"   placeholder="Enter a valid buisenessType" required />
+              </div>
+              <!-- yearofestablishment -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example3"><b>YEAR OF ESTABLISHMENT</b></label>
+                <input type="text" name="yearofestablishment" id="form3Example3" class="form-control form-control-lg" value="<%=user.yearOfEstablise%>"   placeholder="Enter a valid yearofestablishment" required />
+              </div>
+
+              <div class="text-center text-lg-start mt-4 pt-2">
+                <!-- <button type="submit" class="btn">Edit</button> -->
+                 <button class="rounded-md bg-yellow-500 px-2 py-2 hover:bg-yellow-600" type="submit" style="
+    background-color: #feb543;
+    color: black;
+    /* border-radius: 25px; */
+    -webkit-box-shadow: 0px 2px 7px 0px rgba(32, 50, 117, 0.26);
+    box-shadow: 0px 2px 7px 0px rgba(32, 50, 117, 0.26);
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    border: none;
+   "> Edit</button>
+              </div>
+            </form>
+</div></center><br><br>
+    </div>
+            <%- include("../layoouts/footer") %>
+              
+  </body>
+</html>
+

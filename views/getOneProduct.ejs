@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="css/footer.css" rel="stylesheet" />
+    <link href="css/responsive.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+    <link href="css/style.css" rel="stylesheet" />
+ 
+    <link rel="stylesheet" type="text/css"
+href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+
+  <title>Businera</title>
+  <link rel="icon"  href="images/logotitle.png" type="image/png">
+  
+  <style>
+    body {
+      background: -webkit-gradient(linear, left top, right top, from(#864ddf), to(#203376));
+      background: linear-gradient(to right, #864ddf, #203376);
+    }
+
+    .container {
+      max-width: 700px;
+      /* width: 100%; */
+      background: #fff;
+      padding: 10px 10px;
+      border-radius: 5px;
+    }
+
+    .container .title {
+      font-size: 25px;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .container .details {
+      border: 2px solid #dee2e6 !important;
+      height: 100%;
+      padding: 15px;
+      background-color: var(--body-tertiary);
+      border-radius: 4px;
+      border-width: 8px;
+    }
+
+    /* table th:first-child {
+    width: 250px; 
+  }
+  table td:last-child {
+    width: 300px;
+  }
+   */
+
+    .text-dark {
+      color: black !important;
+      font-weight: 500;
+    }
+
+
+    .h-custom {
+      height: calc(100% - 73px);
+    }
+
+    button {
+      background-color: #feb543;
+
+    }
+
+    .btn:hover {
+      background-color: #feb543;
+      color: currentColor;
+    }
+
+
+    @media (max-width: 450px) {
+      .h-custom {
+        height: 80%;
+      }
+    }
+  </style>
+
+</head>
+
+<body class="sub_page">
+<div style="color:white;">
+  
+    <%- include("layoouts/header") %>
+</div>
+
+  <div class="container" style="max-width: 1000px;">
+    <div class="title mt-4 my-3 txt text-center">
+      Product Details
+    </div>
+    <div class="details mt-4">
+      <div class="flex">
+        <img src="data:image/png;base64,<%= product.image.toString('base64') %>" style="width: 500px; height: 400px;    border-radius: 1rem;"
+          class="mr-4">
+        <div class="tables">
+          <table>
+            <tr class="mb-1">
+              <td style="width: 220px;">Product Name:- </td>
+              <td>
+                <%= product.productname%>
+              </td>
+            </tr>
+            <tr class="mb-1 mt-1">
+              <td>Details:-</td>
+              <td>
+                <%=product.detail%>
+              </td>
+            </tr>
+            <tr class="mb-1 mt-1">
+              <td>Category:-</td>
+              <td>
+                <%=product.category%>
+              </td>
+            </tr>
+            <tr class="mb-1 mt-1">
+              <td>Price Details in $ Dollars:-</td>
+              <td>
+                <%=product.priceDetails%>
+              </td>
+            </tr>
+            <tr class="mb-1 mt-1">
+              <td style="width: 220px;">Address:-</td>
+              <td>
+                <%= product.address%>
+              </td>
+            </tr>
+            <tr class="mb-1 mt-1">
+              <td>State:-</td>
+              <td>
+                <%= product.state%>
+              </td>
+            </tr>
+            <tr class="mb-1 mt-1">
+              <td>Country:-</td>
+              <td>
+                <%= product.country%>
+              </td>
+            </tr>
+            <tr class="mb-1 mt-1">
+              <td>Region:-</td>
+              <td>
+                <%=product.region%>
+              </td>
+            </tr>
+            <tr class="mb-1 mt-1">
+              <td>Pincode:-</td>
+              <td>
+                <%= product.pincode%>
+              </td>
+            </tr>
+
+            <% if(req.session.user_id==product.companyId){ %>
+              <tr class="mb-1 mt-1">
+                <td>
+                  <a href="deletProduct?id=<%=product._id%>&cid=<%=product.companyId%>"
+                    class="btn btn-lg mt-2 link-success"
+                    style="padding-left: 2.5rem; padding-right: 2.5rem; background-color: #feb543;"><p>Delete Product</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                      class="bi bi-chat-fill d-inline-block align-text-top" viewBox="0 0 16 16">
+                      <path
+                        d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+              <% }else{ %>
+                <!-- <tr class="mb-1 mt-1">
+                  
+                  <td>
+                    <a href="https://www.businera.shop/dashboard?search=<%= product.companyId %>"
+                      class="btn btn-lg mt-2 "
+                      style="padding-left: 2.5rem; padding-right: 2.5rem; background-color: #feb543;"><p>Chat with seller</p>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                        class="bi bi-chat-fill d-inline-block align-text-top" viewBox="0 0 16 16">
+                        <path
+                          d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 0 0 8 15z" />
+                      </svg>
+                    </a>
+                  </td>
+                </tr> -->
+              <%}%>
+          </table>
+        </div>
+      </div>
+    </div>
+
+                <br><br><br>
+  </div>
+<%- include("layoouts/footer") %>
+                
+</body>
+
+
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,500|Poppins:400,700&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- <link href="css/bootstrap.css" rel="stylesheet" /> -->
+
+    <!-- responsive style -->
+    <link href="css/responsive.css" rel="stylesheet" />
+
+    <link href="css/footer.css" rel="stylesheet" />
+
+    <title>Businera</title>
+  <link rel="icon"  href="images/logotitle.png" type="image/png">
+  
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            background: -webkit-gradient(linear, left top, right top, from(#864ddf), to(#203376));
+            background: linear-gradient(to right, #864ddf, #203376);
+        }
+
+        /* #box{
+  margin-left: -15rem;
+} */
+        #pagination {
+            /* margin-left: 40rem; */
+            /* padding: 0; */
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+
+        }
+
+        #pagination li {
+            margin: 10px;
+        }
+
+        #pagination li a {
+            display: inline-block;
+            text-decoration: none;
+            padding: 2px 10px;
+
+        }
+
+        /* Active and Hoverable Pagination */
+        #pagination li a {
+            border-radius: 5px;
+            -webkit-transition: background-color 0.3s;
+            transition: background-color 0.3s
+        }
+
+       
+    </style>
+</head>
+
+<body class="sub_page">
+
+
+    <%- include("./layoouts/header") %>
+
+        <div class="content flex-col " style="background-color: white;">
+            <form style="text-align:center;background: #f2f1f1;" class="search my-3">
+                <input type="text" placeholder="Search by Product name" name="search"
+                    class="px-2 py-2 my-2 rounded-md w-3/5 ">
+                <button type="submit" class="rounded-md bg-yellow-500 px-2 py-2 hover:bg-yellow-600">Search</button>
+            </form>
+
+           <div class="container mb-3">
+                <div class="mx-auto flex justify-center">
+                    <button class="mx-1 rounded-md bg-yellow-500 px-2 py-2 hover:bg-yellow-600"><a href="buysell">Add
+                            Product for buying</a></button>
+                    <button class="mx-1 rounded-md bg-yellow-500 px-2 py-2 hover:bg-yellow-600"><a
+                            href="service">Buyers</a></button>
+                </div>
+
+            </div>
+
+           <div class="container mb-3">
+                <p class="mx-auto text-center mb-2">Select Category:</p>
+                <div class="mx-auto flex justify-center space-x-2">
+                    <button class="rounded-md bg-yellow-500 px-2 py-2 hover:bg-yellow-600"><a
+                            class="hover:no-underline hover:text-black"
+                            href="/service?category=electronics">Electronics</a></button>
+                    <button class="rounded-md bg-yellow-500 px-2 py-2 hover:bg-yellow-600"><a
+                            class="hover:no-underline hover:text-black"
+                            href="/service?category=metal">Metal</a></button>
+                    <button class="rounded-md bg-yellow-500 px-2 py-2 hover:bg-yellow-600"><a
+                            class="hover:no-underline hover:text-black"
+                            href="/service?category=grain">Grain</a></button>
+                    <button class="rounded-md bg-yellow-500 px-2 py-2 hover:bg-yellow-600"><a
+                            class="hover:no-underline hover:text-black"
+                            href="/service?category=chemical">Chemical</a></button>
+
+                </div>
+            </div>
+
+          
+            <div class="container mb-3">
+               
+                <div class="mx-auto flex justify-center space-x-2">
+                    <button class="rounded-md bg-yellow-500 px-2 py-2 hover:bg-yellow-600"><a
+                                        class="hover:no-underline hover:text-black"
+                                        href="/getProduct?category=electrical">Electrical</a></button>
+                                <button class="rounded-md bg-yellow-500 px-2 py-2 hover:bg-yellow-600"><a
+                                        class="hover:no-underline hover:text-black"
+                                        href="/getProduct?category=software">Software</a></button>
+                                <button class="rounded-md bg-yellow-500 px-2 py-2 hover:bg-yellow-600"><a
+                                        class="hover:no-underline hover:text-black"
+                                        href="/getProduct?category=textile">Textile</a></button>
+                                <button class="rounded-md bg-yellow-500 px-2 py-2 hover:bg-yellow-600"><a
+                                        class="hover:no-underline hover:text-black"
+                                        href="/getProduct?category=household">Household</a></button>
+
+                </div>
+  
+            </div>
+
+           <div class="container mb-3">
+               
+                <div class="mx-auto flex justify-center space-x-2">
+                    <button class="rounded-md bg-yellow-500 px-2 py-2 hover:bg-yellow-600"><a
+                                        class="hover:no-underline hover:text-black"
+                                        href="/getProduct?category=automobile">Automobile</a></button>
+                                <button class="rounded-md bg-yellow-500 px-2 py-2 hover:bg-yellow-600"><a
+                                        class="hover:no-underline hover:text-black"
+                                        href="/getProduct?category=stationary items">Stationary Items</a></button>
+                                <button class="rounded-md bg-yellow-500 px-2 py-2 hover:bg-yellow-600"><a
+                                        class="hover:no-underline hover:text-black"
+                                        href="/getProduct?category=miscellaneous">Miscellaneous</a></button>
+                              
+
+                </div>
+            </div>
+
+
+          
+            <div class="container">
+
+              <div class="row flex justify-center">
+
+                                <%for(var i=0;i<bsData.length ;i++,i++){%>
+                                    <div class="bg-white my-4 rounded-md  px-4 py-5 border-2 shadow-lg col-md-5 mx-2" >
+
+                                      
+                                        <div class="flex-grow text-left sm:mt-0 ">
+                                            <h2 class="text-black text-lg title-font font-semibold mb-2">
+
+                                              <div class="flex">
+                                                 <p class="w-1/2">
+                                                    Buyer From <%=bsData[i].country%>
+
+                                                </p>
+                                                <p class="w-1/2 text-right">
+                                                    Date: <%=bsData[i].date%>
+
+                                                </p>
+                                              </div>
+    
+                                               
+                                                <p>
+                                                    Category :- <%= bsData[i].category%>
+
+                                                </p>
+
+                                            </h2>
+                                          
+
+                                            <div class="text-black">
+                                                <p>Product Name :- <%= bsData[i].productname%>
+                                                </p>
+                                                <p>Name :- <%= bsData[i].contactname%>
+                                                </p>
+                                            </div>
+                                            <a class="mt-3 text-purple-600  inline-flex items-center"
+                                                href="/getBSProduct?id=<%=bsData[i]._id%>">More Details
+                                                <svg fill="none" stroke="currentColor" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2"
+                                                    viewBox="0 0 24 24">
+                                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                      
+                             
+                                      
+                                    </div>
+<%if(i+1<bsData.length){%>
+                                     <div class="bg-white my-4 rounded-md  px-4 py-5 border-2 shadow-lg col-md-5 mx-2"  >
+
+                                      
+                                        <div class="flex-grow text-left sm:mt-0 ">
+                                            <h2 class="text-black text-lg title-font font-semibold mb-2">
+
+                                              <div class="flex">
+                                                 <p class="w-1/2">
+                                                    Buyer From <%=bsData[i+1].country%>
+
+                                                </p>
+                                                <p class="w-1/2 text-right">
+                                                    Date: <%=bsData[i+1].date%>
+
+                                                </p>
+                                              </div>
+    
+                                               
+                                                <p>
+                                                    Category :- <%= bsData[i+1].category%>
+
+                                                </p>
+
+                                            </h2>
+                                          
+
+                                            <div class="text-black">
+                                                <p>Product Name :- <%= bsData[i+1].productname%>
+                                                </p>
+                                                <p>Name :- <%= bsData[i+1].contactname%>
+                                                </p>
+                                            </div>
+                                            <a class="mt-3 text-purple-600  inline-flex items-center"
+                                                href="/getBSProduct?id=<%=bsData[i+1]._id%>">More Details
+                                                <svg fill="none" stroke="currentColor" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2"
+                                                    viewBox="0 0 24 24">
+                                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                      
+                             
+                                      
+                                    </div>
+                   <%}%>               
+                           
+                                    <%}%>
+                                      </div>
+                                    </div>
+
+            </div>
+            <ul class="pagination spcae-y-5" id="pagination">
+                <li class="rounded-md bg-yellow-500 px-2 py-2 hover:bg-yellow-600">
+                    <a href="/service?page=1&category=<%=category%>">
+                        First
+                    </a>
+                </li>
+
+                <li class="active currentPage rounded-md bg-yellow-500 px-2 py-2 hover:bg-yellow-600">
+                    <a href="/service?page=<%=currentPage%>&category=<%=category%>">
+                        <%=currentPage%>
+                    </a>
+                </li>
+                <%if(currentPage + 1 <=totalPage){%>
+                    <li class=" currentPage rounded-md bg-yellow-500 px-2 py-2 hover:bg-yellow-600">
+                        <a href="/service?page=<%=currentPage +1%>&category=<%=category%>">
+                            <%=currentPage +1 %>
+                        </a>
+                    </li>
+                    <%}%>
+                        <%if(currentPage + 2 <=totalPage){%>
+
+                            <li class=" currentPage rounded-md bg-yellow-500 px-2 py-2 hover:bg-yellow-600">
+                                <a href="/service?page=<%=currentPage+2%>&category=<%=category%>">
+                                    <%=currentPage+2%>
+                                </a>
+                            </li>
+                            <%}%>
+                                <%if(currentPage + 3 <=totalPage){%>
+                                    <li class=" currentPage rounded-md bg-yellow-500 px-2 py-2 hover:bg-yellow-600">
+                                        <a href="/service?page=<%=currentPage+3%>&category=<%=category%>">
+                                            <%=currentPage+3%>
+                                        </a>
+                                    </li>
+                                    <%}%>
+                                        <%if(currentPage + 4 <=totalPage){%>
+                                            <li
+                                                class=" currentPage rounded-md bg-yellow-500 px-2 py-2 hover:bg-yellow-600">
+                                                <a href="/service?page=<%=currentPage+4%>&category=<%=category%>">
+                                                    <%=currentPage+4%>
+                                                </a>
+                                            </li>
+                                            <%}%>
+
+
+
+                                                <li class="rounded-md bg-yellow-500 px-2 py-2 hover:bg-yellow-600">
+                                                    <a aria-label="Next"
+                                                        href="/service?page=<%=totalPage%>&category=<%=category%>">
+                                                        Last
+                                                    </a>
+                                                </li>
+            </ul>
+        </div>
+
+        <%- include("./layoouts/footer") %>
+
+</body>
+</html>

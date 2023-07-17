@@ -1,0 +1,220 @@
+<%- include('../layouts/header.ejs') %>
+
+  
+    <div class="container">
+
+        <div class="row clearfix">
+            <div class="col-lg-12">
+                <div class="card chat-app">
+                    <div id="plist" class="people-list" style="height: 34rem;overflow-y: auto;">
+                        <ul class="list-unstyled chat-list mt-2 mb-0">
+
+                          <% if(users.length == 1){
+                               %>
+                                    <li class="clearfix user-list cursor-pointer" data-id="<%= users[0]['_id']%>"
+                                        com-name="<%= users[0]['companyName'] %>">
+                                        <div class="about">
+                                            <%= users[0]['companyName'] %>
+                                                <% if(users[0]['is_online']){ %>
+                                                    <div class="online-status" id="<%= users[0]['_id'] %>-status"> <i class="fa fa-circle online"></i> online </div>
+                                                    
+                                                    <% } else{ %>
+                                                        <div class="offline-status" id="<%= users[0]['_id'] %>-status"> <i class="fa fa-circle offline"></i> offline </div>
+                                                     
+                                                        <% } %>
+                                        </div>
+                                    </li>
+
+                                    <% }  %>
+                          
+                            <% if(users.length>1){
+                                for(let i=0;i<users.length;i++){ %>
+                                    <li class="clearfix user-list cursor-pointer" data-id="<%= users[i][0]['_id']%>"
+                                        com-name="<%= users[i][0]['companyName'] %>">
+                                        <div class="about">
+                                            <%= users[i][0]['companyName'] %>
+                                                <% if(users[i][0]['is_online']){ %>
+                                                    <div class="online-status" id="<%= users[i][0]['_id'] %>-status"> <i class="fa fa-circle online"></i> online </div>
+                                                    <!-- <h6 class="online-status"
+                                                        id="<%= users[i][0]['_id'] %>-status">Online</h6> -->
+                                                    <% } else{ %>
+                                                        <div class="offline-status" id="<%= users[i][0]['_id'] %>-status"> <i class="fa fa-circle offline"></i> offline </div>
+                                                        <!-- <h6 class="offline-status"
+                                                            id="<%= users[i][0]['_id'] %>-status">Offline</h6> -->
+                                                        <% } %>
+                                        </div>
+                                    </li>
+
+                                    <% } } %>
+                        </ul>
+                    </div>
+                    <div class="chat">
+                        <div class="chat-header clearfix">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="chat-about" id="about" text>
+                                        <h6 class="m-b-0"></h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat-history" id="chat-history" style="height: 34rem;
+    overflow-y: auto;">
+                            <ul class="m-b-0">
+                                <li class="clearfix">
+                                    <div class="message other-message float-right"> BUSINERA </div>
+                                </li>
+                            </ul>
+
+                        </div>
+                      <form action="" id="chat-form">
+                      <div class="chat-input-section p-3 p-lg-4 border-top mb-0">
+                        <div class="row g-0">
+                          
+                          <div class="col" style="display:inline-block">
+                            
+                            <input type="text" name="message" id="message" placeholder="enter message" class="form-control form-control-lg bg-light border-light" required>
+
+                            <div class="btn" style="    height: 3rem;
+    width: 13rem;
+    background-color: black;
+    margin-left: 18rem;                          
+    margin-top: -22px;">
+ <i class="fa fa-paper-plane-o fa-2x send"  aria-hidden="true"></i>
+  <i class="fa fa-paper-plane-o fa-2x send2" aria-hidden="true"></i>
+  <p><input type="submit" placeholder="Submit" style="background-color:black;color:white;border:none;"></p>
+                          </div>
+                          </div>
+                          
+                          
+                        
+                      </div>
+                        </form>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+                
+
+
+
+
+                                      
+                                      
+
+    </div>
+    <script>
+      let messageArea = document.querySelector('.chat-history')
+        var sender_id = '<%= user._id %>';
+        console.log(sender_id);
+        var receiver_id;
+        var socket = io('/user-namespace', {
+            auth: {
+                token: '<%= user._id %>'
+            }
+        });
+        $(document).ready(function () {
+            $('.user-list').click(function () {
+                var userId = $(this).attr('data-id');
+                var companyname = $(this).attr('com-name')
+                $('#about').html(companyname)
+                receiver_id = userId;
+                $('.start-head').hide();
+                $('.chat-section').show();
+                $('.chat').show();
+                socket.emit('existingChatLoad', { sender_id: sender_id, receiver_id: receiver_id });
+            });
+        });
+
+        // updating user offline status
+        socket.on('getOnlineUser', function (data) {
+            $('#' + data.user_id + '-status').text('Online');
+            $('#' + data.user_id + '-status').removeClass('offline-status');
+            $('#' + data.user_id + '-status').addClass('online-status');
+        });
+        // updating user online status
+        socket.on('getOfflineUser', function (data) {
+            $('#' + data.user_id + '-status').text('Offline');
+            $('#' + data.user_id + '-status').removeClass('online-status');
+            $('#' + data.user_id + '-status').addClass('offline-status');
+        });
+
+        // saving chat of user
+        $('#chat-form').submit(function (e) {
+            e.preventDefault();
+            var message = $('#message').val();
+            $.ajax({
+                url: '/save-chat',
+                type: 'POST',
+                data: { sender_id: sender_id, receiver_id: receiver_id, message: message },
+                success: function (response) {
+                    if (response.success) {
+                        console.log(response.data.message);
+                        $('#message').val('');
+                        let chat = response.data.message;
+                        let html = `
+                    <div class="message other-message float-right">
+                        <h5>`+ chat + `</h5>
+                    </div>    
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    `;
+                        $('#chat-history').append(html);
+           scrollToBottom()
+                      
+                        socket.emit('newChat', response.data);
+                    }
+                    else {
+                        alert(response.msg);
+                    }
+                }
+            });
+        });
+        socket.on('loadNewChat', function (data) {
+            if (sender_id == data.receiver_id && receiver_id == data.sender_id) {
+                let html = `
+                    <div class="message my-message">
+                        <h5>`+ data.message + `</h5>
+                    </div>    
+                    `;
+                $('#chat-history').append(html);
+               scrollToBottom()
+            }
+
+        })
+        // load old chats
+        socket.on('loadChats', function (data) {
+            $('#chat-history').html('');
+            var chats = data.chats;
+            let html = '';
+            for (let x = 0; x < chats.length; x++) {
+                let addClass = '';
+                if (chats[x]['sender_id'] == sender_id) {
+                    addClass = 'message other-message float-right';
+                }
+                else {
+                    addClass = 'message my-message';
+                }
+
+                html = html + `
+                    <div class='` + addClass + `'>
+                        <h5>`+ chats[x]['message'] + `</h5>
+                    </div> 
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+            `;
+            }
+            $('#chat-history').append(html)
+           scrollToBottom()
+        })  
+
+      function scrollToBottom() {
+    messageArea.scrollTop = messageArea.scrollHeight
+}
+    </script>
+    <%- include('../layouts/footer.ejs') %>

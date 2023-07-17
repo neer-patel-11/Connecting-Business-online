@@ -1,0 +1,285 @@
+<!-- <% include('../layoouts/header.ejs') %> -->
+
+      
+  <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Businera</title>
+  <link rel="icon"  href="images/logotitle.png" type="image/png">
+  
+  <link href="css/footer.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: -webkit-gradient(linear, left top, right top, from(#864ddf), to(#203376));
+      background: linear-gradient(to right, #864ddf, #203376);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .divider:after,
+    .divider:before {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #383a90;
+    }
+
+    .h-custom {
+      height: calc(100% - 73px);
+    }
+
+    button {
+      background-color: #feb543;
+
+    }
+
+    @media (max-width: 450px) {
+      .h-custom {
+        height: 100%;
+      }
+    }
+
+    /* all */
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    :root {
+      --main-blue: #71b7e6;
+      --main-purple: #9b59b6;
+      --main-grey: #ccc;
+      --sub-grey: #d9d9d9;
+    }
+
+    /* container and form */
+    .container {
+      max-width: 700px;
+      width: 100%;
+      background: #fff;
+      padding: 25px 30px;
+      border-radius: 5px;
+    }
+
+    .container .title {
+      font-size: 25px;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .container .title::before {
+      content: "";
+      position: absolute;
+      height: 3.5px;
+      width: 30px;
+      background: linear-gradient(135deg, var(--main-blue), var(--main-purple));
+      left: 0;
+      bottom: 0;
+    }
+
+    .container form .user__details {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 20px 0 12px 0;
+    }
+
+    /* inside the form user details */
+    form .user__details .input__box {
+      width: calc(100% / 2 - 20px);
+      margin-bottom: 15px;
+    }
+
+    .user__details .input__box .details {
+      font-weight: 500;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .user__details .input__box input {
+      height: 45px;
+      width: 100%;
+      outline: none;
+      border-radius: 5px;
+      border: 1px solid var(--main-grey);
+      padding-left: 15px;
+      font-size: 16px;
+      border-bottom-width: 2px;
+      transition: all 0.3s ease;
+    }
+
+    select {
+      height: 45px;
+      width: 100%;
+      outline: none;
+      border-radius: 5px;
+      border: 1px solid var(--main-grey);
+      padding-left: 15px;
+      font-size: 16px;
+      border-bottom-width: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .user__details .input__box input:focus,
+    .user__details .input__box input:valid,
+    select:focus {
+      border-color: var(--main-purple);
+    }
+
+    /* submit button */
+    form .button {
+      height: 45px;
+      margin: 45px 0;
+      width:30%;
+      margin:auto;
+      /* transition: all 3s ease-in-out; */
+      
+    }
+
+    form .button input,
+    form .button select {
+      height: 100%;
+      width: 100%;
+      outline: none;
+      color: #fff;
+      border: none;
+      font-size: 18px;
+      font-weight: 500;
+      border-radius: 5px;
+      background: linear-gradient(135deg, var(--main-blue), var(--main-purple));
+      transition: all 0.3s ease-in-out;
+    }
+
+    form .button input:hover {
+      background: linear-gradient(-135deg, var(--main-blue), var(--main-purple));
+    }
+
+    @media only screen and (max-width: 584px) {
+      .container {
+        max-width: 100%;
+      }
+
+      form .user__details .input__box {
+        margin-bottom: 15px;
+        width: 100%;
+      }
+
+      form .gender__details .category {
+        width: 100%;
+      }
+
+      .container form .user__details {
+        max-height: 300px;
+        overflow-y: scroll;
+      }
+
+      .user__details::-webkit-scrollbar {
+        width: 0;
+      }
+    }
+  </style>
+
+ 
+  <link rel="stylesheet" type="text/css"
+href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Dosis:400,500|Poppins:400,700&amp;display=swap"
+    rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+</head>
+
+<body>
+
+
+       <%- include("../layoouts/header") %>
+
+
+       
+         
+  <section class="vh-100">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+
+        <div class=" col-md-8 col-lg-6 col-xl-4 offset-xl-1"
+          style="background-color: white; border-radius: 2rem; height: 35rem; ">
+     
+            <form  method="POST" action="/login" style="margin-top:4rem;">
+
+<%
+    if(typeof message !== 'undefined')
+    { %>
+        <h4 style="text-align:center;"><%= message %></h4>
+    <%}
+%>
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example3">Email address</label>
+                <input type="email" id="form3Example3" class="form-control form-control-lg" name="email"
+                  placeholder="Enter a valid email address" required />
+                
+              </div>
+
+              <!-- Password input -->
+                  <label class="form-label" for="form3Example4">Password</label>
+              
+              <div class="form-outline mb-3">
+                <input type="password" id="form3Example4" class="form-control form-control-lg" name="password"
+                  placeholder="Enter password" required />
+              
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <!-- Checkbox -->
+                <div class="form-check mb-0">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+                  <label class="form-check-label" for="form2Example3">
+                    Remember me
+                  </label>
+
+                </div>
+              
+              </div>
+
+              <div class="text-center text-lg-start mt-4 pt-2">
+                <button type="submit" ; class="btn btn-lg"
+                  style="padding-left: 2.5rem; padding-right: 2.5rem;background-color: #feb543;">Login</button>
+              </div>
+            </form>
+            
+          <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="/register" class="link-danger">Register</a>
+            </p>
+
+          <p class="small fw-bold mt-2 pt-1 mb-0">Cant remeber password? <a href="/forget" class="link-danger">Forget Password</a>
+            </p>
+
+                    <p class="small fw-bold mt-2 pt-1 mb-0">Verify your email<a href="/verification" class="link-danger">Verify </a>
+            </p>
+
+        </div>
+      </div>
+    </div>
+    <!--      -->
+  </section>
+
+
+<%- include('../layoouts/footer.ejs') %>
+</body>
+
+</html>

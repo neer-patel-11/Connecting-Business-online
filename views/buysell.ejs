@@ -1,0 +1,350 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.111.3">
+  <title>BuySell</title>
+  <link rel="icon"  href="images/logotitle.png" type="image/png">
+  
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sign-in/">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  
+
+<link href="styles.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+<link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+<link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
+<meta name="theme-color" content="#712cf9">    
+  <link href="css/styles.css" rel="stylesheet">
+  <script type="text/javascript" src="js/city_state.js"></script>
+
+  <link rel="stylesheet" type="text/css"
+  href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+<!-- bootstrap core css -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+<!-- fonts style -->
+<link href="https://fonts.googleapis.com/css?family=Dosis:400,500|Poppins:400,700&amp;display=swap"
+  rel="stylesheet" />
+<!-- Custom styles for this template -->
+<link href="css/style.css" rel="stylesheet" />
+<!-- responsive style -->
+<link href="css/responsive.css" rel="stylesheet" />
+
+ 
+  <style>
+     body {
+      background: -webkit-gradient(linear, left top, right top, from(#864ddf), to(#203376));
+      background: linear-gradient(to right, #864ddf, #203376);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .divider:after,
+    .divider:before {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #383a90;
+    }
+
+    .h-custom {
+      height: calc(100% - 73px);
+    }
+
+    button {
+      background-color: #feb543;
+
+    }
+
+    @media (max-width: 450px) {
+      .h-custom {
+        height: 100%;
+      }
+    }
+
+    /* all */
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    :root {
+      --main-blue: #71b7e6;
+      --main-purple: #9b59b6;
+      --main-grey: #ccc;
+      --sub-grey: #d9d9d9;
+    }
+
+    /* container and form */
+    .container {
+      max-width: 700px;
+      width: 100%;
+      background: #fff;
+      padding: 25px 30px;
+      border-radius: 5px;
+    }
+
+    .container .title {
+      font-size: 25px;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .container .title::before {
+      content: "";
+      position: absolute;
+      height: 3.5px;
+      width: 30px;
+     
+      left: 0;
+      bottom: 0;
+    }
+
+    .container form .user__details {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 20px 0 12px 0;
+    }
+
+    /* inside the form user details */
+    form .user__details .input__box {
+      width: calc(100% / 2 - 20px);
+      margin-bottom: 15px;
+    }
+
+    .user__details .input__box .details {
+      font-weight: 500;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .user__details .input__box input {
+      height: 45px;
+      width: 100%;
+      outline: none;
+      border-radius: 5px;
+      border: 1px solid var(--main-grey);
+      padding-left: 15px;
+      font-size: 16px;
+      border-bottom-width: 2px;
+      transition: all 0.3s ease;
+    }
+    
+
+    select {
+      height: 45px;
+      width: 100%;
+      outline: none;
+      border-radius: 5px;
+      border: 1px solid var(--main-grey);
+      padding-left: 15px;
+      font-size: 16px;
+      border-bottom-width: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .user__details .input__box input:focus,
+    .user__details .input__box input:valid,
+    select:focus {
+      border-color: var(--main-purple);
+    }
+
+  
+
+
+    @media only screen and (max-width: 584px) {
+      .container {
+        max-width: 100%;
+      }
+
+      form .user__details .input__box {
+        margin-bottom: 15px;
+        width: 100%;
+      }
+
+      form .gender__details .category {
+        width: 100%;
+      }
+
+      .container form .user__details {
+        max-height: 300px;
+        overflow-y: scroll;
+      }
+
+      .user__details::-webkit-scrollbar {
+        width: 0;
+      }
+    }
+  </style>
+ 
+</head>
+
+  <body class="text-center">
+ 
+    <%- include("layoouts/header") %>
+
+      
+  <% 
+    if(typeof message !== 'undefined')
+    {%>
+        <p style="color: white; text-align:center"><%= message %></p>
+    <%}
+%>
+   
+  <section class="vh-100 text-left">
+    <div class="container-fluid h-custom" >
+<div class="row" >
+  <div class="main_box">
+                <div class="container my-4">
+      <div class="title">Product Information</div>
+         <hr>
+             <form action="/buysell" method="POST">
+
+              <!-- Email input -->
+               <div class="user__details">
+                <div class="input__box">
+               <span class="details">Product Name</span>
+                <input type="text" id="form3Example3" class="form-control form-control-lg" name="productname"
+                  placeholder="Enter a product name" required />
+                
+              </div>
+              
+             
+             <div class="input__box">
+               <span class="details">Details</span>
+               <textarea id="form3Example3" class="form-control form-control-lg" name="detail"
+                  placeholder="Enter details" required  rows="3" cols="25"></textarea>
+                
+              </div>
+
+               <div class="input__box">
+      <label for="category" class="block text-gray-700 font-bold mb-2">Category:</label>
+      <select id="category" name="category" class="border border-gray-400 p-2 w-full" required>
+         <option value="">Select category</option>
+        <option value="electronics">Electronic</option>
+        <option value="metal">Metal</option>
+        <option value="agriculture">Agriculture</option>
+        <option value="chemical">Chemical</option>
+        <option value="electrical">Electrical</option>
+        <option value="software">Software</option>
+        <option value="textile">Textile</option>
+        <option value="household">Household</option>
+        <option value="automobile">Automobile</option>
+        <option value="stationary items">Stationary Items</option>
+        <option value="miscellaneous">Miscellaneous</option>
+        
+      </select>
+    </div>
+              
+            <div class="input__box">  
+                <span class="details">Quantity</span>
+                <input type="text" name="quantity" id="form3Example3" class="form-control form-control-lg"
+                  placeholder="Enter a quantity(give unit)" required />
+              </div>
+
+              
+            <div class="input__box">
+                <span class="details">Name</span>
+                <input type="text" name="contactname" id="form3Example3" class="form-control form-control-lg"
+                  placeholder="Enter a seller name" required />
+              </div>
+
+              
+            <div class="input__box">
+               <span class="details">Contact Email</span>
+                <input type="email" name="email" id="form3Example3" class="form-control form-control-lg"
+                  placeholder="Enter a email" required />
+              </div>
+
+
+              
+            <div class="input__box">
+                <span class="details">Contact Number</span>
+                <input type="tel" name="contactnumber" id="form3Example3" class="form-control form-control-lg"
+                  placeholder="Enter a phone number" required />
+              </div>
+
+              
+             <div class="input__box">
+               <span class="details">Address</span>
+                <input type="text" name="address" id="form3Example3" class="form-control form-control-lg"
+                  placeholder="Enter a address" required />
+              </div>
+
+                 <div class="input_box">
+      <span class="details">Region</span>
+      <div style="" name="region">
+        <select onchange="set_country(this,country,city_state)" size="1" name="region" class="" style="width: 300px; height: 45px;">
+          <option value="" selected="selected">SELECT REGION</option>
+          <script type="text/javascript">
+            setRegions(this);
+          </script>
+        </select>
+      </div>
+    </div>
+                       <div class="form-outline mb-4">
+                 Country&raquo; <select name="country" size="1" disabled onchange="set_city_state(this,city_state)">SELECT COUNTRY</select>
+                 
+              </div>
+                       <div class="form-outline mb-4">
+                  City/State&raquo; <select name="city_state" size="1" disabled onchange="print_city_state(country,this)">SELECT CITY/STATE</select>
+                </div>
+              <!-- pincode -->
+              <div class="input__box">
+               <span class="details">Pincode</span>
+                <input type="text" name="pincode" id="form3Example3" class="form-control form-control-lg"
+                  placeholder="Enter a valid pincode" required />
+              </div>
+
+              
+           
+              
+              
+              <!-- <div class="d-flex justify-content-between align-items-center">
+                <!-- Checkbox -->
+             
+                <!-- <a href="#!" class="text-body">Forgot password?</a> -->
+              <!-- </div> -->
+                  
+            
+              <div class="text-center text-lg-start mt-4 pt-2 mx-auto ">
+                <button type="submit" style = "padding-left: 2.5rem; padding-right: 2.5rem;background-color: #feb543;" class="btn btn-lg" >Send request</button>
+              </div>
+             
+            </form>
+
+
+        </div>
+      </div>
+</div>
+     
+</div>
+  
+
+  </section>
+
+
+
+    
+  </body>
+</html>

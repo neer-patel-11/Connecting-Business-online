@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+<title>Businera</title>
+  <link rel="icon"  href="images/logotitle.png" type="image/png">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+    <link href="/css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="/css/responsive.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+   <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css"/>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+  <link rel="stylesheet" type="text/css" href="css/footer.css"/>
+  
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Dosis:400,500|Poppins:400,700&amp;display=swap" rel="stylesheet"/>
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet"/>
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet"/>
+    <style>
+      body {
+        background: -webkit-gradient(linear, left top, right top, from(#864ddf), to(#203376));
+        background: linear-gradient(to right, #864ddf, #203376);
+      }
+  
+      .container {
+        max-width: 700px;
+        /* width: 100%; */
+        background: #fff;
+        padding: 10px 10px;
+        border-radius: 5px;
+      }
+  
+      .container .title {
+        font-size: 25px;
+        font-weight: 500;
+        position: relative;
+      }
+  
+      .container .details {
+        border: 2px solid #dee2e6 !important;
+        height: 100%;
+        padding: 15px;
+        background-color: var(--body-tertiary);
+        border-radius: 8px;
+        border-width: 8px;
+      }
+  /* table th:first-child {
+    width: 250px; 
+  }
+  table td:last-child {
+    width: 300px;
+  }
+   */
+  
+  .text-dark {
+      color: black!important;
+      font-weight: 500;
+  }
+  
+  
+      .h-custom {
+        height: calc(100% - 73px);
+      }
+  
+      button {
+        background-color: #feb543;
+  
+      }
+      .btn:hover {
+    background-color: #feb543;
+    color: currentColor;
+  }
+  
+  
+      @media (max-width: 450px) {
+        .h-custom {
+          height: 80%;
+        }
+      }
+    </style>
+  <title>Volcanic</title>
+
+</head>
+
+<body class="sub_page">
+  
+  <div class="hero_area">
+    <%- include("layoouts/header") %>
+  </div>
+
+  <div class="container" style="max-width:1000px;">
+    <div class="title mt-4 my-3 txt text-center">
+      Product Details</div>
+    <div class="details mt-4">
+      <table >
+   <tr>
+    
+      <td style ="width: 220px;">Product Name:-</td>
+      <td><%= bsData.productname%></td>
+      
+    </tr>
+   <tr>
+    
+      <td>Category:-</td>
+      <td><%= bsData.category%></td>
+      
+    </tr>
+   <tr>
+    
+      <td>Product Detail:-</td>
+      <td> <%= bsData.detail%></td>
+      
+    </tr>
+   <tr>
+    
+      <td>Product quantity:- </td>
+      <td><%= bsData.quantity%></td>
+      
+    </tr>
+
+</table>
+     
+    </div>
+ <div class="title mt-4 my-3 txt text-center">
+      Buyer Details</div>
+              
+    <div class="details my-2">
+    <table>
+       <tr>
+    
+       <td style ="width: 220px;">Name :-</td>
+      <td><%= bsData.contactname%></td>
+      
+    </tr>
+       <tr>
+    
+      <td>Email:- </td>
+      <td><%= bsData.email%></td>
+      
+    </tr>
+    </table>
+     
+    </div>
+           <div class="title mt-4 my-3 txt text-center">
+      Address Details</div>
+              
+    <div class="details my-2">
+        <table>
+       <tr>
+    
+       <td style ="width: 220px;">Address :-</td>
+      <td><%= bsData.address%></td>
+      
+    </tr>
+       <tr>
+    
+      <td>State:- </td>
+      <td><%= bsData.state%></td>
+      
+    </tr>
+           <tr>
+    
+      <td>Country:- </td>
+      <td> <%= bsData.country%></td>
+      
+    </tr>
+           <tr>
+    
+      <td>Region :-</td>
+      <td> <%= bsData.region%></td>
+      
+    </tr>
+           <tr>
+    
+      <td>Pincode :-</td>
+      <td> <%= bsData.pincode%></td>
+      
+    </tr>
+         
+    </table>
+     
+    </div>
+    <%if(req.session.user_id==bsData.companyId){%>
+      <!-- <p>Delete your product this will be shown to the owner only </p> -->
+      
+      <a href="deletBSProduct?id=<%=bsData._id%>" class="btn btn-lg mt-2 link-success" style="padding-left: 2.5rem; padding-right: 2.5rem; background-color: #feb543;"><p>Delete Request</p>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-chat-fill d-inline-block align-text-top" viewBox="0 0 16 16">
+  <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+</svg>
+</a>
+
+      <%}else{%>
+        
+        
+<!-- 
+<a href="/dashboard?search=<%= bsData.companyId %>" class="btn btn-lg mt-2 mx-2" style="padding-left: 2.5rem; padding-right: 2.5rem; background-color: #feb543;"><p>Chat with buyer</p>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-chat-fill d-inline-block align-text-top" viewBox="0 0 16 16">
+    <path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 0 0 8 15z"/>
+  </svg>
+</a> -->
+<%}%>
+  </div>
+        <br><br>
+<%- include("layoouts/footer") %>
+         
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+</body>
+
+</html>
